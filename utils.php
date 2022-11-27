@@ -18,4 +18,8 @@
 		echo $content;
 		printHTMLFooter();
 	}
+
+	function showLinks() {
+		echo "\n<a href=../../tools.php>Tools</a><br>\n";
+	}
 ?>
