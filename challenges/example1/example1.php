@@ -26,6 +26,11 @@ $content .= "<input type='radio' id='q1' name='q1' value='cd'>\n";
 $content .= "<label for='q1'>cd</label><br>\n";
 $content .= "<input type='submit' value='Submit'>\n";
 $content .= "</form>\n";
+$content .= "<form action='./example1.php' method='get'>\n";
+$content .= "<p> Need a hint? </p>\n";
+$content .= "<input type='hidden' name='hintId' value='y'>\n";
+$content .= "<input type='submit' value='Click Here'>\n";
+$content .= "</form>\n";
 
 if(isset($_GET['q1'])) {
 	if($_GET['q1'] == "ls") {
@@ -35,6 +40,9 @@ if(isset($_GET['q1'])) {
 		$cmd = $_GET['q1'];
 		$content .= "<p>Incorrect! $cmd is not used to view directory contents</p>\n"; 
 	}
+}
+if(isset($_GET["hintId"])) {
+	$content .= "<p>The command you should use is a shortened version of the word 'list'</p>\n";
 }
 
 displayContent($content);
