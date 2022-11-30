@@ -6,6 +6,7 @@
 		echo "<title>Page Title</title>\n";
 		echo "</head>\n";
 		echo "<body>\n\n";
+		showLinks();
 	}
 
 	function printHTMLFooter() {
@@ -14,7 +15,6 @@
 	}	
 
 	function displayContent($content) {
-		showLinks();
 		printHTMLHeader();
 		echo $content;
 		printHTMLFooter();
