@@ -1,6 +1,5 @@
 <?php
 require_once("../../utils.php");
-showLinks();
 
 $content = "";
 $content .= "<h1> Base64 Encoding/Decoding Tool</h1>\n";
