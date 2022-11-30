@@ -14,12 +14,14 @@
 	}	
 
 	function displayContent($content) {
+		showLinks();
 		printHTMLHeader();
 		echo $content;
 		printHTMLFooter();
 	}
 
 	function showLinks() {
-		echo "\n<a href=../../tools.php>Tools</a><br>\n";
+		echo "\n<a href=../../index.php>Challenges</a><br>\n";
+		echo "<a href=../../tools.php>Tools</a><br>\n";
 	}
 ?>
