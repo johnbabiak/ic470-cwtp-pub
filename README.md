@@ -12,6 +12,6 @@ to run example challenge:
 
 <ol>
  <li>Make sure you are in the ic470-cwtp directory</li>
- <li>Run "sudo php -S localhost:80"</li>
+ <li>Run "sudo php -S localhost:8000"</li>
  <li>Open a browser and go to the URL "localhost"</li>
 </ol>
