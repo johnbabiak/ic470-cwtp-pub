@@ -20,6 +20,8 @@ if(isset($_POST['uname'])) {
 <input type='password' id='passwd' name='passwd'>
 <input type='submit' value='Submit'>
 </form>
+<br>
+<a href="register.php">Register</a>
 
 <?php
 printHTMLFooter();	

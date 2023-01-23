@@ -35,16 +35,40 @@
 		if(is_logged_in()) {
 			header("Location: http://localhost:8000/index.php");
 		}
-
-		$_SESSION['user'] = $username;
-		header("Location: http://localhost:8000/index.php");
+		
+		$db = new SQLite3('users.db');
+   		if(!$db){
+      		header("Location: http://localhost:8000/login.php");
+		} else {
+			$stm = $db->prepare("select password from users where uname = ?");
+			$stm->bindParam(1, $username);
+			$res = $stm->execute();
+			$row = $res->fetchArray(SQLITE3_NUM);
+			if (is_array($row)){
+				error_log("login: " . $row[0]);
+				if($row[0] == hash("sha256", $password)){
+					$_SESSION['user'] = $username;
+					header("Location: http://localhost:8000/index.php");
+				}
+			}
+		}
 	}
 
 	function logout() {
 		unset($_SESSION['user']);
 	}
 
-	if(!is_logged_in() and $_SERVER["REQUEST_URI"] != "/login.php") {
+	function createNewUser($username, $password) {
+		$db = new SQLite3('users.db');
+   		if(!$db){
+      		header("Location: http://localhost:8000/login.php");
+		} else {
+			$hashpass = hash("sha256", $password);
+			$db->exec("insert into users (uname, password) values ('$username', '$hashpass')");
+   		}
+	}
+
+	if(!is_logged_in() and $_SERVER["REQUEST_URI"] != "/login.php" and $_SERVER["REQUEST_URI"] != "/register.php") {
 		header("Location: http://localhost:8000/login.php");
 	}
 ?>

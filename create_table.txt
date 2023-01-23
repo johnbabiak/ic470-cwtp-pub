@@ -1,0 +1,4 @@
+create tables users(
+	ID integer primary key autoincrement;
+	uname text not null;
+	password text not null;)
