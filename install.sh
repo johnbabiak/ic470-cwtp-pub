@@ -1,3 +1,4 @@
 apk add php
 apk add python3
-mv run.sh ..
+chmod +x run
+mv run ..
