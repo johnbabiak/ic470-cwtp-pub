@@ -1,4 +1,6 @@
 create tables users(
 	ID integer primary key autoincrement;
 	uname text not null;
-	password text not null;)
+	password text not null;
+	curURL text not null;
+	progress text not null;)

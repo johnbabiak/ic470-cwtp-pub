@@ -68,7 +68,35 @@
    		}
 	}
 
+	function getSavedURL($username) {
+		$db = new SQLite3('users.db');
+   		if(!$db){
+      		header("Location: http://localhost:8000/login.php");
+		} else {
+			$stm = $db->prepare("select curURL from users where uname = ?");
+			$stm->bindParam(1, $username);
+			$res = $stm->execute();
+			$row = $res->fetchArray(SQLITE3_NUM);
+			if (is_array($row)){
+					return $row[0];
+			}
+		}
+	}
+
+	function setSavedURL($username) {
+		$db = new SQLite3('users.db');
+   		if(!$db){
+      		header("Location: http://localhost:8000/login.php");
+		} else {
+			$url = $_SERVER["REQUEST_URI"];
+			$db->exec("insert into users (curURL) values ('$url')");
+		}
+	}
+
 	if(!is_logged_in() and $_SERVER["REQUEST_URI"] != "/login.php" and $_SERVER["REQUEST_URI"] != "/register.php") {
 		header("Location: http://localhost:8000/login.php");
+	}
+	else {
+		setSavedURL($_SESSION['user']);
 	}
 ?>
