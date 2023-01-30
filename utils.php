@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	$cwtpDB = __DIR__ . '/cwtp.db';
 	function printHTMLHeader() {
 		echo "<!DOCTYPE html>\n";
 		echo "<html>\n";
@@ -35,8 +36,8 @@
 		if(is_logged_in()) {
 			header("Location: http://localhost:8000/index.php");
 		}
-		
-		$db = new SQLite3('users.db');
+		global $cwtpDB;	
+		$db = new SQLite3($cwtpDB);
    		if(!$db){
       		header("Location: http://localhost:8000/login.php");
 		} else {
@@ -48,7 +49,8 @@
 				error_log("login: " . $row[0]);
 				if($row[0] == hash("sha256", $password)){
 					$_SESSION['user'] = $username;
-					header("Location: http://localhost:8000/index.php");
+					$URL = getSavedURL($username);
+					header("Location: http://localhost:8000/$URL");
 				}
 			}
 		}
@@ -59,7 +61,8 @@
 	}
 
 	function createNewUser($username, $password) {
-		$db = new SQLite3('users.db');
+		global $cwtpDB;	
+		$db = new SQLite3($cwtpDB);
    		if(!$db){
       		header("Location: http://localhost:8000/login.php");
 		} else {
@@ -69,7 +72,8 @@
 	}
 
 	function getSavedURL($username) {
-		$db = new SQLite3('users.db');
+		global $cwtpDB;	
+		$db = new SQLite3($cwtpDB);
    		if(!$db){
       		header("Location: http://localhost:8000/login.php");
 		} else {
@@ -80,16 +84,41 @@
 			if (is_array($row)){
 					return $row[0];
 			}
+			else {
+				return "index.php";
+			}
 		}
 	}
 
 	function setSavedURL($username) {
-		$db = new SQLite3('users.db');
+		global $cwtpDB;	
+		$db = new SQLite3($cwtpDB);
    		if(!$db){
       		header("Location: http://localhost:8000/login.php");
 		} else {
-			$url = $_SERVER["REQUEST_URI"];
-			$db->exec("insert into users (curURL) values ('$url')");
+			$url = substr($_SERVER["REQUEST_URI"], 1);
+			if(!(strpos($url, "logout") !== false)) {
+				$query = "update users set curURL = '$url' where uname = '$username'";
+				error_log("saved URL = " . $query);
+				$db->exec($query);
+			}
+		}
+	}
+
+	function setChallengeProgress($cname, $progess) {
+		global $cwtpDB;	
+		$db = new SQLite3($cwtpDB);
+   		if(!$db){
+      		header("Location: http://localhost:8000/login.php");
+		} else {
+			$stm = $db->prepare("select progress from challenges where cname = ?");
+			$stm->bindParam(1, $cname);
+			$res = $stm->execute();
+			$row = $res->fetchArray(SQLITE3_NUM);
+			if (!isset($row)){
+					$db->exec("insert into challenges (cname) values ('$cname')");
+			}
+			$db->exec("update challenges set progress = '$progress' where cname = $cname");
 		}
 	}
 
@@ -97,6 +126,8 @@
 		header("Location: http://localhost:8000/login.php");
 	}
 	else {
-		setSavedURL($_SESSION['user']);
+		if(isset($_SESSION['user'])) {
+			setSavedURL($_SESSION['user']);
+		}
 	}
 ?>
