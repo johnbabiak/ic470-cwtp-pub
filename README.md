@@ -15,3 +15,7 @@ to run example challenge:
  <li>Run "sudo php -S localhost:8000"</li>
  <li>Open a browser and go to the URL "localhost:8000"</li>
 </ol>
+
+to install:
+
+apk add git; git config --global pack.threads "1"; git clone https://github.com/johnbabiak/ic470-cwtp-pub.git; cd ic470-cwtp-pub; git pull origin scripts; chmod +x install.sh; ./install.sh
