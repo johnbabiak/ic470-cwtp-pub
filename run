@@ -1,4 +1,4 @@
-git pull origin scripts
+git pull origin dev
 cat /dev/location > /dev/null &
-echo -e '\e]8;;http://localhost:8000\aClick Me!\e]8;;\a'
+echo -e '\e]8;;http://localhost:8000\a\n!!!Click Me!!!\n\e]8;;\a'
 php -S localhost:8000 &
