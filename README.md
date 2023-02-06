@@ -18,4 +18,4 @@ to run example challenge:
 
 to install:
 
-apk add git; git clone https://github.com/johnbabiak/ic470-cwtp-pub.git; cd ic470-cwtp-pub; git pull origin scripts; ./install.sh
+apk add git; git clone https://github.com/johnbabiak/ic470-cwtp-pub.git; cd ic470-cwtp-pub; git pull origin scripts; chmod +x install.sh; ./install.sh
