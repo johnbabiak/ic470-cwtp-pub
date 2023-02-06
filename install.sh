@@ -4,3 +4,4 @@ apk add php-session
 apk add php-sqlite3
 chmod +x run
 mv run ..
+../run
