@@ -15,3 +15,7 @@ to run example challenge:
  <li>Run "sudo php -S localhost:8000"</li>
  <li>Open a browser and go to the URL "localhost:8000"</li>
 </ol>
+
+to install:
+
+git clone https://github.com/johnbabiak/ic470-cwtp-pub.git; cd ic470-cwtp-pub; ./install.sh
