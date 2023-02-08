@@ -11,8 +11,11 @@ printHTMLHeader();
 <img src='./fs_example.png'>
 <p> In order to view what directory you are currently in, you can type the command 'pwd' into the terminal and press enter. In order to view the contents of the directory you are currently in, you can type the command 'ls' into the terminal and press enter. Try entering those commands into the terminal at this link: </p>
 <a href='../shell/shell.php'>Web Terminal</a>
-<br><p> Now it's time for a quiz! </p>
 
+
+<?php
+$form = "
+<br><p> Now it's time for a quiz! </p>
 <form action='./example1.php'>
 <p> Which of the following commands can you use to view the contents of the directory you are currently in? Assume you are using a Linux operating system. </p>
 <input type='radio' id='q1' name='q1' value='pwd'>
@@ -25,27 +28,34 @@ printHTMLHeader();
 <label for='q1'>cd</label><br>
 <input type='submit' value='Submit'>
 </form>
+";
 
-<?php
-if(isset($_GET['q1'])) {
-	if($_GET['q1'] == "ls") {
-		echo "<p>That's correct! Use 'ls' to view directory contents.</p>\n";
-	}
-	else {
-		$cmd = $_GET['q1'];
-		echo "<p>Incorrect! $cmd is not used to view directory contents</p>\n";
+$completion = getChallengeCompletion("example1");
+if(!$completion) { 
+	echo $form; 
+	if(isset($_GET['q1'])) {
+		if($_GET['q1'] == "ls") {
+				echo "<p>That's correct! Use 'ls' to view directory contents.</p>\n";
+				$completion = 1;
+				setChallengeCompletion("example1", $completion);
+		}
+		else {
+			$cmd = $_GET['q1'];
+			echo "<p>Incorrect! $cmd is not used to view directory contents</p>\n";
+		}
 	}
 }
-?>
-
+else { echo "<br><br>You have completed this challenge!"; }
+$hintForm = "
 <form action='./example1.php' method='get'>
 <p> Need a hint? </p>
 <input type='hidden' name='hintId' value='y'>
 <input type='submit' value='Click Here'>
 </form>
+";
+if(!$completion) { echo $hintForm; }
 
-<?php
-if(isset($_GET["hintId"])) {
+if(isset($_GET["hintId"]) and !$completion) {
 	echo "<p>The command you should use is a shortened version of the word 'list'</p>\n";
 }
 

