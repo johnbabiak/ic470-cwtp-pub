@@ -1,6 +1,6 @@
 <?php
 require_once("utils.php");
-printHTMLHeader();
+printHTMLHeader(False);
 
 if(is_logged_in()) {
 	header("Location: http://localhost:8000/index.php");
@@ -11,17 +11,24 @@ if(isset($_POST['uname'])) {
 }
 ?>
 
-<h1>Welcome to the Cyber Warefare Training Platform! Please Log In to Continue</h1>
+<div class='p-5 text-center'>
+<h1>Welcome to the Cyber Warefare Training Platform!</h1>
+</div>
 
-<form action='login.php' method='post'>
+<div class='container text-center'>
+<h6> Please Log In to Continue</h6>
+<form class='pt-1' action='login.php' method='post'>
 <label for='username'>Username: </label>
 <input type='text' id='uname' name='uname'>
+<br>
 <label for='password'>Password: </label>
 <input type='password' id='passwd' name='passwd'>
+<br>
 <input type='submit' value='Submit'>
 </form>
+<a class='nav-link active text-info pt-1' href="register.php">Register</a>
+</div>
 <br>
-<a href="register.php">Register</a>
 
 <?php
 printHTMLFooter();	

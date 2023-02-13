@@ -1,17 +1,23 @@
 <?php
 	session_start();
 	$cwtpDB = __DIR__ . '/cwtp.db';
-	function printHTMLHeader() {
+	function printHTMLHeader($show=True) {
 		echo "<!DOCTYPE html>\n";
-		echo "<html>\n";
+		echo "<html lang='en'>\n";
 		echo "<head>\n";
-		echo "<title>CWTP</title>\n";
+		echo "	<title>CWTP</title>\n";
+		echo "	<meta name='viewport' content='width=device-width, initial-scale=1'>";
+		echo "	<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css' rel='stylesheet'>";
 		echo "</head>\n";
 		echo "<body>\n\n";
-		showLinks();
+		echo "<div class='container-fluid h-100 text-bg-white'>";
+		if($show == True) {
+			showLinks();
+		}
 	}
 
 	function printHTMLFooter() {
+		echo "</div>";
 		echo "\n\n</body>\n";
 		echo "</html>";
 	}	
@@ -23,9 +29,17 @@
 	}
 
 	function showLinks() {
-		echo "\n<a href=../../index.php>Challenges</a><br>\n";
-		echo "<a href=../../tools.php>Tools</a><br>\n";
-		echo "<a href=../../logout.php>Logout</a><br>\n";
+		echo "<nav class='navbar navbar-dark'>\n";
+		echo "<div class='container-fluid text-bg-dark rounded'>\n";
+		echo "<div class='navbar-header'>\n";
+		echo "<a class='navbar-brand' href='/'>Cyber Warfare Training Platform</a>\n";
+		echo "</div>\n";
+		echo "<a class='nav-link active' href='/'>Home</a>\n";
+		echo "<a class='nav-link active' href=../../index.php>Challenges</a>\n";
+		echo "<a class='nav-link active' href=../../tools.php>Tools</a>\n";
+		echo "<a class='nav-link active' href=../../logout.php>Logout</a>\n";
+		echo "</div>\n";
+		echo "</nav>\n";
 	}
 
 	function is_logged_in() {
