@@ -10,14 +10,19 @@
 		echo "	<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css' rel='stylesheet'>";
 		echo "</head>\n";
 		echo "<body>\n\n";
-		echo "<div class='container-fluid h-100 text-bg-white'>";
 		if($show == True) {
 			showLinks();
 		}
+		echo "<div class='container-fluid'>\n";
+		echo "<div class='row'>\n";
+		if($show == True) {
+			showSidebar();
+		}
+		echo "<div class='col'>\n";
 	}
 
 	function printHTMLFooter() {
-		echo "</div>";
+		echo "</div></div>";
 		echo "\n\n</body>\n";
 		echo "</html>";
 	}	
@@ -40,6 +45,32 @@
 		echo "<a class='nav-link active' href=../../logout.php>Logout</a>\n";
 		echo "</div>\n";
 		echo "</nav>\n";
+	}
+
+	function showSidebar() {
+		echo "<div class='col-3'>\n";
+		echo "<h6>Challenge Progress</h6>\n";
+		echo "<ul class='nav nav-pills flex-column mb-auto'>\n";
+		$total = 0;
+		$complete = 0;
+
+		$challenges = array_slice(scandir(__DIR__ . "/challenges"), 2);
+		#echo var_dump($challenges);
+		foreach ($challenges as $cname) {
+			$status = "text-bg-secondary";
+			$total = $total + 1;
+			if(getChallengeCompletion($cname)) {
+				$status = "text-bg-success";
+				$complete = $complete + 1;
+			}
+				
+			echo "<li class='nav-item pt-1'><a class='nav-link active " . $status . "' href='../../../../challenges/$cname/$cname.php'>" . $cname . "</a></li>\n";
+		}
+
+		$prog = round(($complete/$total)*100);
+		echo "<li class='nav-item pt-1'><div class='progress'><div class='progress-bar progress-bar-striped bg-success' role='progressbar' style='width: " . $prog . "%' aria-valuenow='" . $prog . "' aria-valuemin='0' aria-valuemax='100'></div></div></li>\n";
+		echo "</ul>\n";
+		echo "</div>\n";
 	}
 
 	function is_logged_in() {
