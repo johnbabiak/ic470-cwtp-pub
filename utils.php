@@ -39,8 +39,7 @@
 		echo "<div class='navbar-header'>\n";
 		echo "<a class='navbar-brand' href='/'>Cyber Warfare Training Platform</a>\n";
 		echo "</div>\n";
-		echo "<a class='nav-link active' href='/'>Home</a>\n";
-		echo "<a class='nav-link active' href=../../index.php>Challenges</a>\n";
+		echo "<a class='nav-link active' href=../../index.php>Home</a>\n";
 		echo "<a class='nav-link active' href=../../tools.php>Tools</a>\n";
 		echo "<a class='nav-link active' href=../../logout.php>Logout</a>\n";
 		echo "</div>\n";

@@ -16,15 +16,21 @@ if(isset($_POST['uname'])) {
 </div>
 
 <div class='container text-center'>
-<h6> Please Log In to Continue</h6>
+<h6>Please Log In to Continue</h6>
 <form class='pt-1' action='login.php' method='post'>
+<div class='pt-1'>
 <label for='username'>Username: </label>
 <input type='text' id='uname' name='uname'>
+</div>
 <br>
+<div class='pt-1'>
 <label for='password'>Password: </label>
 <input type='password' id='passwd' name='passwd'>
+</div>
 <br>
+<div class='pt-1'>
 <input type='submit' value='Submit'>
+</div>
 </form>
 <a class='nav-link active text-info pt-1' href="register.php">Register</a>
 </div>

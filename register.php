@@ -14,13 +14,19 @@ if(isset($_POST['uname']) and isset($_POST['passwd'])){
 <p>Please enter your desired username and password</p>
 <br>
 <form class='pt-1' action='register.php' method='post'>
+<div class='pt-1'>
 <label for='username'>Username: </label>
 <input type='text' id='uname' name='uname'>
+</div>
 <br>
+<div class='pt-1'>
 <label for='password'>Password: </label>
 <input type='password' id='passwd' name='passwd'>
+</div>
 <br>
+<div class='pt-1'>
 <input type='submit' value='Submit'>
+</div>
 </form>
 <a class='nav-link active text-info pt-1' href="login.php">Back to Login</a>
 </div>
