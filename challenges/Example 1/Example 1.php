@@ -10,7 +10,7 @@ printHTMLHeader();
 <p> The Linux file system is made up of two components: files and directories. Directories hold files and files hold data. The Linux file system is also hierarchical, meaning is starts at one top level directory and then all other directories are underneath that one. The top level directory in Linux is called the 'root' directory and is named '\'. Below is a picture of what a Linux file system might look like. </p> 
 <img class='img-fluid' src='./fs_example.png'>
 <p> In order to view what directory you are currently in, you can type the command 'pwd' into the terminal and press enter. In order to view the contents of the directory you are currently in, you can type the command 'ls' into the terminal and press enter. Try entering those commands into the terminal at this link: </p>
-<a href='../shell/shell.php'>Web Terminal</a>
+<a href='../../../../tools/shell/shell.php'>Web Terminal</a>
 
 
 <?php
