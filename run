@@ -1,4 +1,5 @@
 cd ic470-cwtp-pub
+git stash
 git pull origin scripts
 cat /dev/location > /dev/null &
 echo -e '\e]8;;http://localhost:8000\aClick Me!\e]8;;\a'
