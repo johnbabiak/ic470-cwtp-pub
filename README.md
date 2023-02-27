@@ -1,6 +1,6 @@
 # IC470 CWTP
 
-##Cyber Warfare Training Platform
+## Cyber Warfare Training Platform
 
 USNA Capstone Project for AY'23
 
