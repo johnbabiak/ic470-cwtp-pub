@@ -12,7 +12,7 @@ if(isset($_POST['uname'])) {
 ?>
 
 <div class='p-5 text-center'>
-<h1>Welcome to the Cyber Warefare Training Platform!</h1>
+<h1>Welcome to the Cyber Warfare Training Platform!</h1>
 </div>
 
 <div class='container text-center'>
