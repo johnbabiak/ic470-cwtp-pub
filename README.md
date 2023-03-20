@@ -15,11 +15,11 @@ apk add git; git config --global pack.threads "1"; git clone https://github.com/
 
 In the iSH app, you can paste using this button:
 
-<img src="paste.png" width="100">
+<img src="paste.png" width="200">
 
 Once the script is done installing, click the "Click Me!" link to open the CWTP. You will have to lower the keyboard in order to open the link.
 
-<img src="keybdown.png" width="100">
+<img src="keybdown.png" width="200">
 
 If the iSH app prompts you to use location services, allow it to use your location. This is so the app can run in the background and makes the CWTP work.
 
