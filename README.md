@@ -24,3 +24,29 @@ Once the script is done installing, click the "Click Me!" link to open the CWTP.
 If the iSH app prompts you to use location services, allow it to use your location. This is so the app can run in the background and makes the CWTP work.
 
 If you close the iSH app and want to run the system again, simply open the app and type "./run" to run the system then click the "Click Me!" link to access it.
+
+
+Filenames and locations:
+/root
+	- create_table.txt
+	- cwtp.db (created upon installation of system)
+	- index.php
+	- install.sh
+	- keybdown.png
+	- login.php
+	- logout.php
+	- paste.png
+	- README.md (this file!)
+	- register.php
+	- run
+	- tools.php
+	- utils.php
+	/challenges
+		/'Example 1'/
+			- 'Example 1.php'
+			- fs_example.png
+	/tools
+		/base64
+			- base64.php
+		/shell
+			- shell.php
