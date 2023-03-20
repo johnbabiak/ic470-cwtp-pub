@@ -28,48 +28,28 @@ If you close the iSH app and want to run the system again, simply open the app a
 
 Filenames and locations:
 
+```
 /root
-
 	- create_table.txt
-
 	- cwtp.db (created upon installation of system)
-
 	- index.php
-
 	- install.sh
-
 	- keybdown.png
-
 	- login.php
-
 	- logout.php
-
 	- paste.png
-
 	- README.md (this file!)
-
 	- register.php
-
 	- run
-
 	- tools.php
-
 	- utils.php
-
 	/challenges
-
 		/'Example 1'/
-
 			- 'Example 1.php'
-
 			- fs_example.png
-
 	/tools
-
 		/base64
-
 			- base64.php
-
 		/shell
-
 			- shell.php
+```
