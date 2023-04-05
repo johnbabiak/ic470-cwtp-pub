@@ -109,7 +109,8 @@
 	function create_db() {
 		global $cwtpDB;	
 		$db = new SQLite3($cwtpDB);
-   		if(!$db){
+		if(!$db){
+			error_log("creating db...");
       		exec("cat ~/ic470-cwtp-pub/create_table.txt | sqlite3 ~/ic470-cwtp-pub/cwtp.db");
 		}
 	}
