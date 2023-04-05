@@ -1,7 +1,7 @@
 <?php
 require_once("utils.php");
 printHTMLHeader(False);
-
+create_db();
 if(is_logged_in()) {
 	header("Location: http://localhost:8000/index.php");
 }

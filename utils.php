@@ -106,6 +106,14 @@
 		error_log("after logout: " . $_SESSION['user']);
 	}
 
+	function create_db() {
+		global $cwtpDB;	
+		$db = new SQLite3($cwtpDB);
+   		if(!$db){
+      		exec("cat ~/ic470-cwtp-pub/create_table.txt | sqlite3 ~/ic470-cwtp-pub/cwtp.db");
+		}
+	}
+
 	function createNewUser($username, $password) {
 		global $cwtpDB;	
 		$db = new SQLite3($cwtpDB);
