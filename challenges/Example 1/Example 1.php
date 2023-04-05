@@ -38,6 +38,7 @@ if(!$completion) {
 				echo "<p>That's correct! Use 'ls' to view directory contents.</p>\n";
 				$completion = 1;
 				setChallengeCompletion("Example 1", $completion);
+				Header('Location: '.$_SERVER['PHP_SELF']);
 		}
 		else {
 			$cmd = $_GET['q1'];
@@ -54,7 +55,8 @@ else {
 			</form>
 ";
 		if(isset($_GET['playAgain'])) {
-			setChallengeCompletion("Example 1", 0);
+				setChallengeCompletion("Example 1", 0);
+				Header('Location: '.$_SERVER['PHP_SELF']);
 		}
 	}
 $hintForm = "
