@@ -5,5 +5,5 @@ then
 	sqlite3 cwtp.db < create_table.txt
 fi
 cat /dev/location > /dev/null &
-echo -e '\e]8;;http://localhost:8000\a!!!Click Me!!!\e]8;;\a'
+echo -e '\e]8;;http://localhost:8000\a!!!Click Me!!!\e]8;;\a' | figlet
 php -S localhost:8000 &
