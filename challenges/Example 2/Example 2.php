@@ -9,7 +9,7 @@ printHTMLHeader();
 <p>This kind of challenge is typically called a "capture the flag" or CTF style challenge. That's because you have to find and submit a flag to complete the challange.</p>
 <p>Typically, flags will have a particular format to let you know that you found the right flag. For this challenge, the flag will look like CWTP{...flag...}</p>
 <p>Also, as a hint, go check out the <a href='../../tools.php'>tools</a> page and see if there is anything there that can help you!</p>
-<p>Here is the encoded message: <small>Q1RXUHtiNDVlXzY0XzNuYzBkMW5nfQ==</small></p>
+<p>Here is the encoded message: <small><br>Q1RXUHtiNDVlXzY0<br>XzNuYzBkMW5nfQ==</small></p>
 <?php
 $form = "
 <form action='./Example 2.php'>
