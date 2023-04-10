@@ -8,6 +8,8 @@ Customer: Dr. Dane Brown
 
 Team Members: John Babiak, Antawn Weg, Sarah Yo
 
+To use this system, you need the iSH app which can be downloaded from the Apple App Store.
+
 To install, copy the following line into iSH:
 ```
 apk add git; git config --global pack.threads "1"; git clone https://github.com/johnbabiak/ic470-cwtp-pub.git; cd ic470-cwtp-pub; git pull origin dev; chmod +x install.sh; ./install.sh
