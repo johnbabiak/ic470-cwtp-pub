@@ -67,7 +67,7 @@
 		}
 
 		$prog = round(($complete/$total)*100);
-		echo "<li class='nav-item pt-1'><div class='progress'><div class='progress-bar progress-bar-striped bg-success' role='progressbar' style='width: " . $prog . "%' aria-valuenow='" . $prog . "' aria-valuemin='0' aria-valuemax='100'></div></div></li>\n";
+		echo "<li class='nav-item pt-1'><div class='progress'><div class='progress-bar progress-bar-striped bg-success' role='progressbar' style='width: " . $prog . "%' aria-valuenow='" . $prog . "' aria-valuemin='0' aria-valuemax='100'></div></div><div><p>$prog%</p></div></li>\n";
 		echo "</ul>\n";
 		echo "</div>\n";
 	}
