@@ -1,5 +1,6 @@
 apk add php
 apk add python3
+apk add sqlite
 apk add php-session
 apk add php-sqlite3
 apk add figlet
