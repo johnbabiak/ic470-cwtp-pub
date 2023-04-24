@@ -12,7 +12,7 @@ To use this system, you need the iSH app which can be downloaded from the Apple 
 
 To install, copy the following line into iSH:
 ```
-apk add git; git config --global pack.threads "1"; git clone https://github.com/johnbabiak/ic470-cwtp-pub.git; cd ic470-cwtp-pub; git pull origin dev; chmod +x install.sh; ./install.sh
+apk add git; git config --global pack.threads "1"; git clone https://github.com/johnbabiak/ic470-cwtp-pub.git; cd ic470-cwtp-pub; git pull origin master; chmod +x install.sh; ./install.sh
 ```
 
 In the iSH app, you can paste using this button:
