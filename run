@@ -1,0 +1,9 @@
+cd ic470-cwtp-pub
+git pull origin dev
+if [ ! -f cwtp.db ]
+then
+	sqlite3 cwtp.db < create_table.txt
+fi
+cat /dev/location > /dev/null &
+echo -e '\e]8;;http://localhost:8000\a!!!Click Me!!!\n!!!Click Me!!!\n!!!Click Me!!!\e]8;;\a'
+php -S localhost:8000 &
