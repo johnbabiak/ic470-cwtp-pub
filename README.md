@@ -23,7 +23,7 @@ Once the script is done installing, click the "Click Me!" link to open the CWTP.
 
 <img src="keybdown.png" width="200">
 
-If the iSH app prompts you to use location services, allow it to use your location. This is so the app can run in the background and makes the CWTP work.
+If the iSH app prompts you to use location services, allow it to use your location by selecting the "allow always" option. This is so the app can run in the background and makes the CWTP work.
 
 If you close the iSH app and want to run the system again, simply open the app and type "./run" to run the system then click the "Click Me!" link to access it.
 
