@@ -49,7 +49,7 @@
 	function showSidebar() {
 		echo "<div class='col-3'>\n";
 		echo "<h6>Challenge Progress</h6>\n";
-		echo "<ul class='nav nav-pills flex-column mb-auto'>\n";
+		echo "<ul class='nav nav-pills flex-column mb-auto padding-right'>\n";
 		$total = 0;
 		$complete = 0;
 
